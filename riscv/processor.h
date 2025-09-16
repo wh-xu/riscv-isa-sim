@@ -398,6 +398,9 @@ public:
       reg_t ELEN, VLEN;
       bool vill;
       bool vstart_alu;
+      // Bits for vlut_type
+      reg_t vlut;
+      bool vlut_pack;
 
       // vector element for varies SEW
       template<class T>
@@ -445,7 +448,9 @@ public:
         ELEN(0),
         VLEN(0),
         vill(false),
-        vstart_alu(false) {
+        vstart_alu(false),
+        vlut(0),
+        vlut_pack(false) {
       }
 
       ~vectorUnit_t() {
